@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AusTin TECH Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+*{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background: #fafafa; color: #222; line-height: 1.6; }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center; 
+  padding: 20px 60px; background: white; 
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1); 
+  position: sticky; top: 0; z-index: 100;
+}
+
+.navbar .logo { 
+  font-weight: bold; font-size: 24px; 
+  color: #6633cc; 
+  letter-spacing: 1px;
+}
+
+.navbar ul { display: flex; list-style: none; }
+
+.navbar ul li a { 
+  margin-left: 30px; text-decoration: none; 
+  color: #333; font-size: 16px; 
+  font-weight: 500; transition: all 0.3s;
+  position: relative;
+}
+
+.navbar ul li a:hover {
+  color: #6633cc;
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6633cc;
+  transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  display: flex; align-items: center; 
+  padding: 100px 60px; 
+  background: linear-gradient(135deg, #0041ff, #d300c5); 
+  color: white; 
+  min-height: 80vh;
+}
+
+.hero-left { 
+  flex: 1; 
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.intro { 
+  font-size: 18px; 
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin: 10px 0;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 500px;
+  margin: 20px 0 30px;
+}
+
+.btn {
+  margin-top: 20px; 
+  padding: 14px 35px; 
+  background: #fff; 
+  color: #0041ff; 
+  border: none; 
+  border-radius: 30px; 
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #d300c5;
+  transition: width 0.5s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hero-right { 
+  flex: 1; 
+  text-align: center;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero-right img { 
+  max-width: 80%; 
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: all 0.4s;
+  border: 5px solid rgba(255,255,255,0.2);
+}
+
+.hero-right img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.stats { 
+  display: flex; 
+  justify-content: space-around;
+  padding: 60px 40px; 
+  background: #f8f8f8; 
+  text-align: center;
+}
+
+.card { 
+  padding: 30px; 
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  min-width: 200px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card h2 { 
+  font-size: 36px; 
+  color: #d300c5; 
+  margin-bottom: 10px;
+}
+
+.card p { 
+  font-size: 16px; 
+  color: #555;
+  font-weight: 500;
+}
+
+/* New Skills Section */
+.skills {
+  padding: 100px 60px;
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #333;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0041ff, #d300c5);
+  border-radius: 2px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-info {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.skills-info h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.skills-info p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.skills-chart {
+  flex: 1;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 300px;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Vertical grid lines for the chart */
+.chart-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: -1;
+}
+
+.chart-grid-line {
+  height: 100%;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Horizontal grid lines */
+.chart-horizontal-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: -1;
+}
+
+.chart-horizontal-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.chart-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 10px;
+  max-width: 80px;
+}
+
+.bar-container {
+  width: 40px;
+  height: 100%;
+  background: #f0f0f0;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.bar-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Will be set by JS */
+  background: linear-gradient(to top, #0041ff, #d300c5);
+  border-radius: 20px 20px 0 0;
+  transition: height 1.5s ease-out;
+}
+
+.bar-label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.skill-name {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.chart-scale {
+  position: absolute;
+  left: -40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scale-value {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Projects Section */
+.projects {
+  padding: 100px 60px;
+  background: #f8f8f8;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.project-image {
+  height: 820px;
+  background: linear-gradient(45deg, #0041ff, #d300c5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20%;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 350px;
+  background: linear-gradient(45deg, rgba(0,65,255,0.7), rgba(211,0,197,0.7));
+  opacity: 0.8;
+}
+
+.project-image span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.project-content p {
+  color: #555;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-link {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.github-link {
+  background: #333;
+  color: white;
+}
+
+.github-link:hover {
+  background: #222;
+  transform: translateY(-3px);
+}
+
+.live-link {
+  background: linear-gradient(to right, #0041ff, #d300c5);
+  color: white;
+}
+
+.live-link:hover {
+  background: linear-gradient(to right, #0033cc, #b200a9);
+  transform: translateY(-3px);
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 60px;
+  text-align: center;
+}
+
+.fa{
+  font-size: 24px;
+  text-align: center;
+  padding: 15px;
+  margin: 0 10px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.fa:hover {
+  transform: translateY(-5px);
+}
+
+.fa-github{
+  background-color: #333;
+  color: white;
+}
+
+.fa-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.fa-youtube {
+  background-color: #FF0000;
+  color: white;
+}
+
+.fa-facebook {
+  background-color: #4267B2;
+  color: white;
+}
+
+.footer p {
+  margin-top: 30px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+  
+  .hero-left, .hero-right {
+    width: 100%;
+  }
+  
+  .hero p {
+    max-width: 100%;
+  }
+  
+  .navbar {
+    padding: 15px 30px;
+    flex-direction: column;
+  }
+  
+  .navbar ul {
+    margin-top: 20px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .card {
+    width: 80%;
+  }
+  
+  .skills-container {
+    flex-direction: column;
+  }
+  
+  .skills-info {
+    padding-right: 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navbar ul li a {
+    margin-left: 0;
+  }
+  
+  .hero h1 {
+    font-size: 40px;
+  }
+  
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    width: 100%;
+  }
+  
+  .chart-bar {
+    margin: 0 5px;
+    max-width: 60px;
+  }
+  
+  .bar-container {
+    width: 30px;
+  }
+}
+
+/* Animation for sections when scrolled to */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects, .skills {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.projects.visible, .skills.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Aus Tin TECH ™</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="Contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="intro">HEY THERE I'M</p>
+    <h1>AUSTIN</h1>
+    <p>Creative Web Developer/Designer and Part time gamer</p>
+    <button class="btn" onclick="scrollToProjects()">SEE MY WORK</button>
+  </div>
+  <div class="hero-right">
+    <div class="project-image">
+      <span><img src="jj.jpg" alt="my image"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="card"> <h2>15k+</h2><p>Happy Customers</p></div>
+  <div class="card"> <h2>12k+</h2><p>Tickets Solved</p></div>
+  <div class="card"> <h2>9/10</h2><p>Average Rating</p></div>
+</section>
+
+<!-- New Skills Section -->
+<section id="skills" class="skills">
+  <h2 class="section-title">My Skills & Expertise</h2>
+  <div class="skills-container">
+    <div class="skills-info">
+      <h3>Frontend Development Expertise</h3>
+      <p>With over 5 years of experience in frontend development, I've mastered a wide range of technologies to create engaging and responsive user interfaces.</p>
+      <p>My expertise includes building complex applications with modern JavaScript frameworks, creating pixel-perfect designs from mockups, and optimizing web performance.</p>
+      <p>I continuously update my skills to stay current with the latest frontend technologies and best practices.</p>
+    </div>
+    <div class="skills-chart">
+      <div class="chart-container">
+        <div class="chart-grid">
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+        </div>
+        <div class="chart-horizontal-grid">
+          <div class="chart-horizontal-line"></div>
+          <div class="chart-horizontal-line"></div>
+          <div class="chart-horizontal-line"></div>
+          <div class="chart-horizontal-line"></div>
+          <div class="chart-horizontal-line"></div>
+        </div>
+        <div class="chart-scale">
+          <div class="scale-value">100%</div>
+          <div class="scale-value">80%</div>
+          <div class="scale-value">60%</div>
+          <div class="scale-value">40%</div>
+          <div class="scale-value">20%</div>
+          <div class="scale-value">0%</div>
+        </div>
+        
+        <div class="chart-bar">
+          <div class="bar-label">95%</div>
+          <div class="bar-container">
+            <div class="bar-fill" data-level="95"></div>
+          </div>
+          <div class="skill-name">HTML5</div>
+        </div>
+        
+        <div class="chart-bar">
+          <div class="bar-label">92%</div>
+          <div class="bar-container">
+            <div class="bar-fill" data-level="92"></div>
+          </div>
+          <div class="skill-name">CSS3</div>
+        </div>
+        
+        <div class="chart-bar">
+          <div class="bar-label">88%</div>
+          <div class="bar-container">
+            <div class="bar-fill" data-level="88"></div>
+          </div>
+          <div class="skill-name">JavaScript</div>
+        </div>
+        
+        <div class="chart-bar">
+          <div class="bar-label">85%</div>
+          <div class="bar-container">
+            <div class="bar-fill" data-level="85"></div>
+          </div>
+          <div class="skill-name">React</div>
+        </div>
+        
+        <div class="chart-bar">
+          <div class="bar-label">80%</div>
+          <div class="bar-container">
+            <div class="bar-fill" data-level="80"></div>
+          </div>
+          <div class="skill-name">Vue.js</div>
+        </div>
+        
+        <div class="chart-bar">
+          <div class="bar-label">78%</div>
+          <div class="bar-container">
+            <div class="bar-fill" data-level="78"></div>
+          </div>
+          <div class="skill-name">UI/UX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2 class="section-title">My Projects</h2>
+  <div class="project-container">
+    <div class="project-card">
+      <div class="project-image"><span>E-Commerce Store</span></div>
+      <div class="project-content">
+        <h3>Modern E-Commerce Platform</h3>
+        <p>A fully responsive e-commerce website with cart functionality, product filtering, and secure checkout process.</p>
+        <div class="project-links">
+          <a href="#" class="project-link live-link">Live Demo</a>
+          <a href="#" class="project-link github-link">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-image"><span>Weather App</span></div>
+      <div class="project-content">
+        <h3>Simple Weather App</h3>
+        <p>A simple weather application that displays current weather conditions and forecasts for any location worldwide.</p>
+        <div class="project-links">
+          <a href="https://austinweather-app.netlify.app/" class="project-link live-link">Live Demo</a>
+          <a href="https://github.com/Austin-tec/Weather.git" class="project-link github-link">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-image"><span>Portfolio Template</span></div>
+      <div class="project-content">
+        <h3>Developer Portfolio</h3>
+        <p>A sleek portfolio template for developers and designers to showcase their work effectively.</p>
+        <div class="project-links">
+          <a href="#" class="project-link live-link">Live Demo</a>
+          <a href="#" class="project-link github-link">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="https://github.com/Austin-tec/ME.git" class="fa fa-github"></a>
+    <a href="https://wa.me/2349048967115" class="fa fa-whatsapp"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-facebook"></a>
+  </div>
+  <p>&copy; 2025 Aus Tin TECH. All rights reserved.</p>
+</footer>
+
+<script>
+// Animate skill bars when section comes into view
+function animateSkillBars() {
+  const bars = document.querySelectorAll('.bar-fill');
+  bars.forEach(bar => {
+    const level = bar.getAttribute('data-level');
+    bar.style.height = level + '%';
+  });
+}
+
+// Scroll to projects function
+function scrollToProjects() {
+  const projectsSection = document.getElementById('projects');
+  projectsSection.scrollIntoView({ behavior: 'smooth' });
+  
+  // Add animation class when scrolled to
+  setTimeout(() => {
+    projectsSection.classList.add('visible');
+  }, 300);
+}
+
+// Add intersection observers
+document.addEventListener('DOMContentLoaded', function() {
+  const projectsSection = document.getElementById('projects');
+  const skillsSection = document.getElementById('skills');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        
+        // If it's the skills section, animate the bars
+        if (entry.target.id === 'skills') {
+          animateSkillBars();
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  observer.observe(projectsSection);
+  observer.observe(skillsSection);
+  
+  // Initialize the chart bars at 0% height
+  const bars = document.querySelectorAll('.bar-fill');
+  bars.forEach(bar => {
+    bar.style.height = '0%';
+  });
+});
+</script>
+</body>
+</html>
