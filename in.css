@@ -1,0 +1,717 @@
+body { background: #fafafa; color: #222; line-height: 1.6; }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center; 
+  padding: 20px 60px; background: white; 
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1); 
+  position: sticky; top: 0; z-index: 100;
+}
+
+.navbar .logo { 
+  font-weight: bold; font-size: 24px; 
+  color: #6633cc; 
+  letter-spacing: 1px;
+}
+
+.navbar ul { display: flex; list-style: none; }
+
+.navbar ul li a { 
+  margin-left: 30px; text-decoration: none; 
+  color: #333; font-size: 16px; 
+  font-weight: 500; transition: all 0.3s;
+  position: relative;
+}
+
+.navbar ul li a:hover {
+  color: #6633cc;
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6633cc;
+  transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 100px 60px;
+  background: linear-gradient(145deg, #0041ff, #ff007f, #ff8c00, #00ff6a);
+  background-size: 300% 300%; /* Increase size for a more dramatic effect */
+  color: white;
+  min-height: 80vh;
+  animation: gradientAnimation 19s ease-in-out infinite; /* Adjust speed and easing */
+}
+
+.hero-left { 
+  flex: 1; 
+  animation: fadeInLeft 3s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.intro { 
+  font-size: 18px; 
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin: 10px 0;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 500px;
+  margin: 20px 0 30px;
+}
+
+.btn {
+  margin-top: 20px; 
+  padding: 14px 35px; 
+  background: #fff; 
+  color: #0041ff; 
+  border: none; 
+  border-radius: 30px; 
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #d300c5;
+  transition: width 0.5s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn:hover {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hero-right { 
+  flex: 1; 
+  text-align: center;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero-right img { 
+  max-width: 80%; 
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transition: all 0.4s;
+  border: 5px solid rgba(255,255,255,0.2);
+}
+
+.hero-right img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.stats { 
+  display: flex; 
+  justify-content: space-around;
+  padding: 60px 40px; 
+  background: #f8f8f8; 
+  text-align: center;
+}
+
+.card { 
+  padding: 30px; 
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  min-width: 200px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card h2 { 
+  font-size: 36px; 
+  color: #d300c5; 
+  margin-bottom: 10px;
+}
+
+.card p { 
+  font-size: 16px; 
+  color: #555;
+  font-weight: 500;
+}
+
+/* New Skills Section */
+.skills {
+  padding: 100px 60px;
+  background: #fff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #333;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #0041ff, #d300c5);
+  border-radius: 2px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-info {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.skills-info h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.skills-info p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.skills-chart {
+  flex: 1;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  flex: 1;
+  font-weight: bold;
+  color: #333;
+}
+
+.progress-container {
+  flex: 3;
+  height: 20px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 15px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0; /* Initial width set to 0 for animation */
+  background: linear-gradient(to right, #0041ff, #d300c5);
+  border-radius: 10px;
+  transition: width 1.5s ease-out;
+}
+
+.progress-label {
+  flex: 0.5;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Projects Section */
+.projects {
+  padding: 100px 60px;
+  background: #f8f8f8;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.project-image {
+  height: 820px;
+  background: linear-gradient(45deg, #0041ff, #d300c5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20%;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 350px;
+  background: linear-gradient(45deg, rgba(0,65,255,0.7), rgba(211,0,197,0.7));
+  opacity: 0.8;
+}
+
+.project-image span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.project-content p {
+  color: #555;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-link {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.github-link {
+  background: #333;
+  color: white;
+}
+
+.github-link:hover {
+  background: #222;
+  transform: translateY(-3px);
+}
+
+.live-link {
+  background: linear-gradient(to right, #0041ff, #d300c5);
+  color: white;
+}
+
+.live-link:hover {
+  background: linear-gradient(to right, #0033cc, #b200a9);
+  transform: translateY(-3px);
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 50px 60px;
+  text-align: center;
+}
+
+.fa{
+  font-size: 24px;
+  text-align: center;
+  padding: 15px;
+  margin: 0 10px;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.fa:hover {
+  transform: translateY(-5px);
+}
+
+.fa-github{
+  background-color: #333;
+  color: white;
+}
+
+.fa-whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.fa-youtube {
+  background-color: #FF0000;
+  color: white;
+}
+
+.fa-facebook {
+  background-color: #4267B2;
+  color: white;
+}
+
+.footer p {
+  margin-top: 30px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Default Light Mode Styles */
+body {
+  background: #fafafa;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar {
+  background: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar ul li a {
+  color: #333;
+}
+
+.navbar ul li a:hover {
+  color: #6633cc;
+}
+
+.hero {
+  background: linear-gradient(145deg, #0041ff, #ff007f, #ff8c00, #00ff6a);
+  color: white;
+}
+
+.card {
+  background: white;
+  color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.skills {
+  background: #fff;
+}
+
+.contact {
+  background: #fff;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background: #1e1e1e;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .navbar ul li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar ul li a:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(145deg, #3700b3, #ff007f, #ff8c00, #03dac6);
+  color: white;
+}
+
+body.dark-mode .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .skills {
+  background: #1e1e1e;
+}
+
+body.dark-mode .contact {
+  background: #1e1e1e;
+}
+
+body.dark-mode .footer {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  color: #333;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background: #6633cc;
+  color: #fff;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+  background: #bb86fc;
+  color: #121212;
+}
+
+/* Toggle Switch Styles */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #6633cc;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+  
+  .hero-left, .hero-right {
+    width: 100%;
+  }
+  
+  .hero p {
+    max-width: 100%;
+  }
+  
+  .navbar {
+    padding: 15px 30px;
+    flex-direction: column;
+  }
+  
+  .navbar ul {
+    margin-top: 20px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .card {
+    width: 80%;
+  }
+  
+  .skills-container {
+    flex-direction: column;
+  }
+  
+  .skills-info {
+    padding-right: 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navbar ul li a {
+    margin-left: 0;
+  }
+  
+  .hero h1 {
+    font-size: 40px;
+  }
+  
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    width: 100%;
+  }
+  
+  .chart-bar {
+    margin: 0 5px;
+    max-width: 60px;
+  }
+  
+  .bar-container {
+    width: 30px;
+  }
+}
+
+/* Animation for sections when scrolled to */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects, .skills {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.projects.visible, .skills.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add animation to the linear gradient background */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

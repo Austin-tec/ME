@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AusTin TECH Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="in.css" />
+<script src="in.js"></script>
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">Aus Tin TECH ™</div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#Contacts">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="intro">HEY THERE I'M</p>
+    <h1>AUSTIN</h1>
+    <p>Creative Web Developer/Designer and Part time  gamer</p>
+    <button class="btn" onclick="scrollToProjects()">SEE MY WORK</button>
+    <button class="btn" onclick="scrollToContact()">Hire me </button>
+  </div>
+  <div class="hero-right">
+    <div class="project-image">
+      <span><img src="jj.jpg" alt="the image of Austin-tec"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="card"> <h2>15k+</h2><p>Happy Customers</p></div>
+  <div class="card"> <h2>12k+</h2><p>Tickets Solved</p></div>
+  <div class="card"> <h2>9/10</h2><p>Average Rating</p></div>
+</section>
+
+<!-- New Skills Section -->
+<section id="skills" class="skills">
+  <h2 class="section-title">My Skills & Expertise</h2>
+  <div class="skills-container">
+    <div class="skills-info">
+      <h3>Frontend Development Expertise</h3>
+      <p>With over 2 years of experience in frontend development, I've mastered a wide range of technologies to create engaging and responsive user interfaces.</p>
+      <p>My expertise includes building complex applications with modern JavaScript frameworks, creating pixel-perfect designs from mockups, and optimizing web performance.</p>
+      <p>I continuously update my skills to stay current with the latest frontend technologies and best practices.</p>
+    </div>
+    <div class="skills-chart">
+      <div class="progress-bar">
+        <span class="skill-name">HTML5</span>
+        <div class="progress-container">
+          <div class="progress-fill" data-level="95"></div>
+        </div>
+        <span class="progress-label">95%</span>
+      </div>
+      <div class="progress-bar">
+        <span class="skill-name">CSS3</span>
+        <div class="progress-container">
+          <div class="progress-fill" data-level="92"></div>
+        </div>
+        <span class="progress-label">92%</span>
+      </div>
+      <div class="progress-bar">
+        <span class="skill-name">JavaScript</span>
+        <div class="progress-container">
+          <div class="progress-fill" data-level="88"></div>
+        </div>
+        <span class="progress-label">88%</span>
+      </div>
+      <div class="progress-bar">
+        <span class="skill-name">React</span>
+        <div class="progress-container">
+          <div class="progress-fill" data-level="85"></div>
+        </div>
+        <span class="progress-label">85%</span>
+      </div>
+      <div class="progress-bar">
+        <span class="skill-name">Vue.js</span>
+        <div class="progress-container">
+          <div class="progress-fill" data-level="80"></div>
+        </div>
+        <span class="progress-label">80%</span>
+      </div>
+      <div class="progress-bar">
+        <span class="skill-name">UI/UX</span>
+        <div class="progress-container">
+          <div class="progress-fill" data-level="78"></div>
+        </div>
+        <span class="progress-label">78%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2 class="section-title">My Projects</h2>
+  <div class="project-container">
+    <div class="project-card">
+      <div class="project-image"><span>E-Commerce Store</span></div>
+      <div class="project-content">
+        <h3>Modern E-Commerce Platform</h3>
+        <p>A fully responsive e-commerce website with cart functionality, product filtering, and secure checkout process.</p>
+        <div class="project-links">
+          <a href="#" class="project-link live-link">Live Demo</a>
+          <a href="#" class="project-link github-link">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-image"><span>Weather App</span></div>
+      <div class="project-content">
+        <h3>Simple Weather App</h3>
+        <p>A simple weather application that displays current weather conditions and forecasts for any location worldwide.</p>
+        <div class="project-links">
+          <a href="https://austinweather-app.netlify.app/" class="project-link live-link">Live Demo</a>
+          <a href="https://github.com/Austin-tec/Weather.git" class="project-link github-link">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-card">
+      <div class="project-image"><span>Portfolio Template</span></div>
+      <div class="project-content">
+        <h3>Developer Portfolio</h3>
+        <p>A sleek portfolio template for developers and designers to showcase their work effectively.</p>
+        <div class="project-links">
+          <a href="#" class="project-link live-link">Live Demo</a>
+          <a href="#" class="project-link github-link">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add Contact Section -->
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact-container">
+    <form action="https://formspree.io/f/mdkldpkw" method="POST" class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<style>
+/* Contact Section Styles */
+.contact {
+  padding: 100px 60px;
+  background: #fff;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+</style>
+
+<footer class="footer">
+  <div class="Contacts">
+    <a href="https://github.com/Austin-tec/ME.git" class="fa fa-github"></a>
+    <a href="https://wa.link/6c9yhw" class="fa fa-whatsapp"></a>
+    <a href="https://www.youtube.com/@austinjaxsonalexander?si=8bVtPDEaoqjvRazp" class="fa fa-youtube"></a>
+    <a href="https://www.facebook.com/profile.php?id=61559279201275" class="fa fa-facebook"></a>
+  </div>
+  <p>&copy; 2025 Aus Tin TECH. All rights reserved.</p>
+</footer>
+<script>
+// Update the "Hire Me" button to scroll to the contact section
+function scrollToContact() {
+  const contactSection = document.getElementById('contact');
+  contactSection.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+
+
+<script>
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
